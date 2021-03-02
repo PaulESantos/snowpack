@@ -13,11 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# snowpack
+# snowpack <a href='https://github.com/PaulESantos/snowpack'><img src='inst/img/gothic_snow.png' align="right" height="200" width="350" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/snowpack)](https://CRAN.R-project.org/package=snowpack)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
+[![](http://cranlogs.r-pkg.org/badges/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
+[![](http://cranlogs.r-pkg.org/badges/last-week/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
 <!-- badges: end -->
 
 The goal of snowpack is to ...
@@ -35,7 +38,7 @@ install.packages("snowpack")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(snowpack)
+#library(snowpack)
 ## basic example code
 ```
 
