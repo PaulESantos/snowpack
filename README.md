@@ -18,11 +18,11 @@ The goal of snowpack is to …
 
 ## Installation
 
-You can install the released version of snowpack from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
-install.packages("snowpack")
+remotes::install_github("PaulESantos/snowpack")
 ```
 
 ## Example
