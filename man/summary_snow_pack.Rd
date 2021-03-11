@@ -7,11 +7,26 @@
 summary_snow_pack(df, location = hobolocation, date = longdate)
 }
 \arguments{
-\item{date}{}
+\item{df}{\code{snow_pack} function output}
+
+\item{location}{sensor position}
+
+\item{date}{date variable column}
 }
 \value{
-
+A summary tibble with the start and end date of snow
+presence, and the number of days.
 }
 \description{
 Summarise snow pack
+}
+\examples{
+data("hobo_rmbl_data")
+pbm <- hobo_rmbl_data[[2]]
+
+pbm \%>\%
+hobo_summary() \%>\%
+snow_pack("temperature_c_4", mean_temp, 2) \%>\%
+summary_snow_pack()
+
 }

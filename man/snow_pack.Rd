@@ -7,11 +7,30 @@
 snow_pack(df, location, variable, value)
 }
 \arguments{
-\item{value}{}
+\item{df}{\verb{HOBO summary object}}
+
+\item{location}{The options for this parameter are:
+\code{temperature_c_1} \code{temperature_c_2}
+\code{temperature_c_3} \code{temperature_c_4}
+some files could have only two sensors for temperature.}
+
+\item{variable}{The options for this parameter are:
+\code{mean_temp} \code{min_temp} \code{max_temp} \code{range}}
+
+\item{value}{this parameter defines the range of temperature variations}
 }
 \value{
-
+a tibble
 }
 \description{
-Snow pack
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+This function takes a subset of observations  between a temperature interval
+}
+\examples{
+data("hobo_rmbl_data")
+pbm <- hobo_rmbl_data[[2]]
+
+pbm \%>\%
+hobo_summary() \%>\%
+  snow_pack("temperature_c_4", mean_temp, 5)
 }

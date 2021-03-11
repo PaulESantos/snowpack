@@ -4,14 +4,29 @@
 \alias{summary_snow_pack_grouped}
 \title{Summarise snow pack grouped}
 \usage{
-summary_snow_pack_grouped(data, by = hobolocation, date = longdate)
+summary_snow_pack_grouped(df, by = hobolocation, date = longdate)
 }
 \arguments{
-\item{date}{}
+\item{df}{\code{snow_pack_grouped} function output}
+
+\item{by}{sensor position}
+
+\item{date}{date variable column}
 }
 \value{
-
+A summary tibble with the start and end date of snow
+presence, and the number of days.
 }
 \description{
 Summarise snow pack grouped
+}
+\examples{
+data("hobo_rmbl_data")
+pbm <- hobo_rmbl_data[[2]]
+
+pbm \%>\%
+hobo_summary() \%>\%
+snow_pack_grouped(mean_temp, 2) \%>\%
+summary_snow_pack_grouped()
+
 }

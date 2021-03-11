@@ -7,11 +7,24 @@
 snow_pack_grouped(df, variable, value)
 }
 \arguments{
-\item{value}{}
+\item{df}{\verb{HOBO summary object}}
+
+\item{variable}{The options for this parameter are:
+\code{mean_temp} \code{min_temp} \code{max_temp} \code{range}}
+
+\item{value}{this parameter defines the range of temperature variations}
 }
 \value{
-
+a tibble
 }
 \description{
-Grouped snow pack
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+this function takes a subset of observations  between a temperature interval
+}
+\examples{
+data("hobo_rmbl_data")
+road <- hobo_rmbl_data[[1]]
+road \%>\%
+ hobo_summary() \%>\%
+ snow_pack_grouped(mean_temp, 2)
 }

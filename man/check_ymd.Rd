@@ -2,16 +2,34 @@
 % Please edit documentation in R/check_ymd.R
 \name{check_ymd}
 \alias{check_ymd}
-\title{Review dates}
+\title{Review the start and end date of \code{HOBO} data}
 \usage{
 check_ymd(df, ...)
 }
 \arguments{
-\item{...}{}
+\item{df}{A data.frame formatted as the example dataset. Review
+hobo_rmbl_data to see details.}
+
+\item{...}{Additional variable, month or day. If you like a
+detailed review, by default the function check
+measurement by year.}
 }
 \value{
-
+A tibble
 }
 \description{
-Review dates
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+
+Helper function to review if the file takes  the temperature
+measurement every hour.
+}
+\examples{
+data("hobo_rmbl_data")
+road <- hobo_rmbl_data[[1]]
+road \%>\%
+check_ymd()
+road \%>\%
+check_ymd(month)
+road \%>\%
+check_ymd(month, day)
 }

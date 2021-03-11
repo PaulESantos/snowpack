@@ -27,4 +27,6 @@ Imports:
     readr,
     readxl,
     tidyr,
-    magrittr
+    magrittr,
+    lifecycle,
+    crayon

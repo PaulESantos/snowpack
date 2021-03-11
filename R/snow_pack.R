@@ -1,14 +1,31 @@
 #' Snow pack
 #'
-#' @param df
-#' @param location
-#' @param variable
-#' @param value
+#' @description
 #'
-#' @return
+#' `r lifecycle::badge("experimental")`
+#' This function takes a subset of observations  between a temperature interval
+#'
+#'
+#' @param df `HOBO summary object`
+#' @param location The options for this parameter are:
+#'                 `temperature_c_1` `temperature_c_2`
+#'                 `temperature_c_3` `temperature_c_4`
+#'                 some files could have only two sensors for temperature.
+#' @param variable The options for this parameter are:
+#'                  `mean_temp` `min_temp` `max_temp` `range`
+#' @param value this parameter defines the range of temperature variations
+#'
+#'
+#' @return a tibble
 #' @export
 #'
 #' @examples
+#' data("hobo_rmbl_data")
+#' pbm <- hobo_rmbl_data[[2]]
+#'
+#' pbm %>%
+#' hobo_summary() %>%
+#'   snow_pack("temperature_c_4", mean_temp, 5)
 snow_pack <- function(df, location, variable, value) {
 
   if(value == 0){
@@ -25,9 +42,7 @@ snow_pack <- function(df, location, variable, value) {
     value2 <- value
   }
 
-  # colname <- dplyr::enquo(variable)
-
-  dff <- df %>%
+dff <- df %>%
     dplyr::filter(hobolocation == location,
                   {{variable}} >= value1 ,
                   {{variable}} <= value2) %>%
