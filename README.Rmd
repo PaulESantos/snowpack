@@ -21,6 +21,7 @@ knitr::opts_chunk$set(
 [![](http://cranlogs.r-pkg.org/badges/grand-total/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
 [![](http://cranlogs.r-pkg.org/badges/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
 [![](http://cranlogs.r-pkg.org/badges/last-week/snowpack?color=green)](https://cran.r-project.org/package=snowpack)
+[![R-CMD-check](https://github.com/PaulESantos/snowpack/workflows/R-CMD-check/badge.svg)](https://github.com/PaulESantos/snowpack/actions)
 <!-- badges: end -->
 
 The goal of snowpack is to ...
